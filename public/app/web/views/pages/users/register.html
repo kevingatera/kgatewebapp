@@ -1,0 +1,59 @@
+<div class="page-header">
+    <h1> User Registration</h1>
+</div>
+
+<!-- The following basically means
+    that when this form is submitted activate this function
+-->
+
+<form ng-submit="register.registerUser(registrationData)">
+    <!-- Username -->
+    <label> Username:</label>
+    <input class="form-control" type="text" name="username"
+            placeholder="please enter your username"
+            ng-model="register.registrationData.username"/>
+    <br />
+    <!-- Password -->
+    <label>Password: </label>
+    <input class="form-control" type="password" name="password"
+            placeholder="please enter your password"
+            ng-model="register.registrationData.password"/>
+    <br />
+    <!-- Email -->
+    <label>Email:</label>
+    <input class="form-control" type="text" name="email"
+            placeholder="please enter your email"
+            ng-model="register.registrationData.email"/>
+    <br />
+    <button class="btn btn-primary" type="submit">REGISTER</button>
+
+</form>
+
+<br />
+
+<!-- This is the loading stuff that comes when we're waiting
+     that the server answers -->
+<div class="jumbotron text-center" ng-show="register.loading">
+    <span class="glyphicon glyphicon-repeat spinner"></span>
+    <p>
+        Loading ...
+    </p>
+</div>
+
+<br />
+
+<!-- We need to  -->
+
+<div class="row row-show-hide-message" ng-show="register.successMessage">
+    <div class="alert alert-success">
+        <!-- Success Message -->
+        {{ register.successMessage }}
+    </div>
+</div>
+
+<div class="row row-show-hide-message" ng-show="register.errorMessage">
+    <div class="alert alert-danger">
+        <!-- Error message -->
+        {{ register.errorMessage }}
+    </div>
+</div>
