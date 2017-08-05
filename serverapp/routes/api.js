@@ -10,10 +10,11 @@ module.exports = function (router){
     router.post('/users', function(req, res){
         // res.send('testing users route');
         var user = new User();
+        user.name = req.body.name;
         user.username = req.body.username;
         user.password = req.body.password;
         user.email = req.body.email;
-        var userData = [user.username, user.password, user.email];
+        var userData = [user.name, user.username, user.password, user.email];
         // Form validation mechanism
         var flagForMissing = false;
         var missingCriteria = function(){
@@ -29,7 +30,7 @@ module.exports = function (router){
             // res.send("There is a missing field!");
             res.json({
                 success: false,
-                message: 'jdlasjThere is ONE or SEVERAL missing field(s)',
+                message: 'There is ONE or SEVERAL missing field(s)',
             })
         }
         else {

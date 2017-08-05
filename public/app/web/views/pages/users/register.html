@@ -7,6 +7,12 @@
 -->
 
 <form ng-submit="register.registerUser(registrationData)">
+    <!-- Name -->
+    <label> Name:</label>
+    <input class="form-control" type="text" name="name"
+            placeholder="please enter your name"
+            ng-model="register.registrationData.name"/>
+    <br />
     <!-- Username -->
     <label> Username:</label>
     <input class="form-control" type="text" name="username"

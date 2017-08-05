@@ -19,7 +19,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
         templateUrl: 'web/views/pages/users/register.html',
         controller: 'registrationController',
         controllerAs: 'register', // This is the name to user in your app
-        authenticated: false // Can't use this route when user is authenticated
+        authenticated: false // Is this route used when user is authenticated
     })
 
     .when('/login', {
@@ -42,7 +42,7 @@ var app = angular.module('appRoutes', ['ngRoute'])
         templateUrl: 'web/views/pages/users/social/social.html',
         controller: 'facebookController',
         controllerAs: 'facebook',
-        authenticated: false
+        authenticated: true
     })
 
     .when('/fberror', {
@@ -89,10 +89,26 @@ var app = angular.module('appRoutes', ['ngRoute'])
         requireBase: false
     });
 });
-// Restricting certain routes or pages
-app.run(['$rootScope', function($rootScope) {
+// Restricting certain routes or pages and checking if those rules are followed
+app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location) {
     $rootScope.$on('$routeChangeStart', function(event, next, current) {
-        console.log(next.$$route);
+        // console.log(Auth.isLoggedIn());
+        // Check what should be accessed when the user is already authenticated
+        if(next.$$route.authenticated === true){
+            if(!Auth.isLoggedIn()){
+                // Prevent access if not authenticated
+                event.preventDefault();
+                // redirect to a home instead of an empty window
+                $location.path('/');
+            }
+        }
+        // Check what should be accessed when the user is NOT authenticated
+        else if (next.$$route.authenticated === false) {
+            if(Auth.isLoggedIn()){
+                event.preventDefault();
+                $location.path('/profile')
+            }
+        }
     })
 }])
 
