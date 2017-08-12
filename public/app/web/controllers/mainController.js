@@ -16,7 +16,7 @@ angular.module('mainController', ['authServices'])
             Auth.getUserInfo().then(function(data){
                 console.log(data.data.username);
                 app.username = data.data.username;
-                app.usermail = data.data.usermail;
+                app.usermail = data.data.email;
             })
         } else {
             console.log('Failure: User is NOT logged in');

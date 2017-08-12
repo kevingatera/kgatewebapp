@@ -36,11 +36,35 @@ module.exports = function (router){
         else {
             user.save(function(err){
                 if (err){
-                    /* res.send(err); */
-                    res.json({
-                        success: false,
-                        message: 'Username or password already exists',
-                    })
+                  console.log(err);
+                    /// Checkc the name validity
+                    if(err.errors.name){
+                      res.json({
+                          success: false,
+                          message: err.errors.name.message,
+                      })
+                    }
+                    // check the email validity
+                    else if (err.errors.email) {
+                      res.json({
+                          success: false,
+                          message: err.errors.email.message,
+                      })
+                    }
+                    // Check the username validity
+                    else if (err.errors.username) {
+                      res.json({
+                          success: false,
+                          message: err.errors.username.message,
+                      })
+                    }
+                    // check the password validity
+                    else if (err.errors.password){
+                      res.json({
+                          success: false,
+                          message: err.errors.password.message,
+                      })
+                    }
                 }
                 else {
                     // res.send('The user was SUCCESSFULLY created!');

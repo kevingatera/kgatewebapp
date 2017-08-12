@@ -27,7 +27,7 @@ mongoose.connect('mongodb://localhost:27017/kgatewebapp_db', function(err){
     }
 });
 
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname + '/public/app/web/views/index.html'));
 });
 

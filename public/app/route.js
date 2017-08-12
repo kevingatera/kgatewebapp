@@ -104,12 +104,12 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
         }
         // Check what should be accessed when the user is NOT authenticated
         else if (next.$$route.authenticated === false) {
-            if(Auth.isLoggedIn()){
-                event.preventDefault();
-                $location.path('/profile')
+          if(Auth.isLoggedIn()){
+            event.preventDefault();
+            $location.path('/profile')
             }
         }
     })
 }])
 
-console.log('ROUTE.js file... OK');
+console.log('ROUTE.js file... OK'); 
