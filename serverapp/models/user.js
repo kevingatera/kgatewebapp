@@ -1,3 +1,4 @@
+/* Tjis file contains te user model */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt-nodejs');
@@ -8,7 +9,7 @@ var validate = require('mongoose-validator'); // used to avlidate the user entri
 var nameValidator = [
   validate({
     validator: 'matches',
-    arguments: /^(([a-zA-Z]{2,20})+[ ]+([a-zA-Z]{2,100}))$/,
+    arguments: /^[a-z\u00C0-\u02AB'´`]+\.?\s([a-z\u00C0-\u02AB'´`]+\.?\s?)+$/i,
     message: 'Must be at least 3 characters, max 30, no special characters or numbers, must have space in between the name.'
   })
 ];
@@ -20,7 +21,7 @@ var emailValidator = [
   }),
   validate({
     validator: 'isLength',
-    arguments: [3, 25],
+    arguments: [3, 30],
     message: 'The email should be between {ARGS[0]} and {ARGS[1]} characters.'
   })
 ];
@@ -33,7 +34,7 @@ var usernameValidator = [
   }),
   validate({
     validator: 'isLength',
-    arguments: [3, 25],
+    arguments: [3, 30],
     message: 'The email should be between {ARGS[0]} and {ARGS[1]} characters.'
   })
 ];
@@ -41,8 +42,13 @@ var usernameValidator = [
 var passwordValidator = [
   validate({
     validator: 'matches',
-    arguments: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+    arguments: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/,
     message: 'Password must be at least 8 characters, have one letter and one number.'
+  }),
+  validate({
+    validator: 'isLength',
+    arguments: [8, 35],
+    message: 'The password should be between {ARGS[0]} and {ARGS[1]} characters.'
   })
 ];
 

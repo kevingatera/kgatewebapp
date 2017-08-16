@@ -3,11 +3,20 @@
 angular.module('userServices', [])
 .factory('oneUser', function($http){
     userFactory = {};
-    /* Below is the declaration of a custom application to be used
-        throughout my whole webapp */
+
+    // Will look like User.create(registrationData)
     userFactory.create = function(registrationData) {
-        // console.log('Test userServices.... OK');
         return $http.post('api/users', registrationData);
+    }
+
+    // Will look like User.checkUsername(registrationData)
+    userFactory.checkUsername = function(registrationData) {
+        return $http.post('api/checkUsername', registrationData);
+    }
+
+    // Will look like User.checkEmail(registrationData)
+    userFactory.checkEmail = function(registrationData) {
+        return $http.post('api/checkEmail', registrationData);
     }
     return userFactory;
 

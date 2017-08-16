@@ -112,4 +112,4 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
     })
 }])
 
-console.log('ROUTE.js file... OK'); 
+// console.log('ROUTE.js file... OK'); 
