@@ -4214,3 +4214,58 @@ OK.. Connected to the database
 [0mPOST /api/me [32m200 [0m0.626 ms - 70[0m
 [0mGET /web/views/pages/users/profile.html [32m200 [0m0.491 ms - 566[0m
 [0mGET /favicon.ico [32m200 [0m0.571 ms - 4714[0m
+[33m[nodemon] 1.11.0[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching: *.*[39m
+[32m[nodemon] starting `node server.js`[39m
+events.js:160
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: EBADF: bad file descriptor, read
+    at Error (native)
+(node:17630) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+the dir is: /home/admin/web/kevingatera.com/public_html/public/app/web/views/index.html
+Running the server on 8085
+OK.. Connected to the database
+[0mGET / [32m200 [0m8.874 ms - 4714[0m
+[0mGET /assets/css/bootstrap.css [32m200 [0m2.167 ms - 146010[0m
+[0mGET /assets/css/myanimations.css [32m200 [0m2.152 ms - 1502[0m
+[0mGET /assets/css/animate.css [32m200 [0m2.144 ms - 23848[0m
+[0mGET /assets/js/angular-route.js [32m200 [0m4.472 ms - 45008[0m
+[0mGET /assets/js/angular-animate.js [32m200 [0m7.928 ms - 151136[0m
+[0mGET /app.js [32m200 [0m9.019 ms - 510[0m
+[0mGET /assets/js/angular.js [32m200 [0m3.512 ms - 1268263[0m
+[0mGET /route.js [32m200 [0m3.766 ms - 3396[0m
+[0mGET /web/controllers/mainController.js [32m200 [0m3.496 ms - 4384[0m
+[0mGET /web/controllers/userControl.js [32m200 [0m4.349 ms - 4005[0m
+[0mGET /services/userServices.js [32m200 [0m3.402 ms - 716[0m
+[0mGET /services/authServices.js [32m200 [0m0.617 ms - 3297[0m
+[0mGET /assets/js/jquery-3.2.1.min.js [32m200 [0m0.656 ms - 86659[0m
+[0mGET /assets/js/bootstrap.js [32m200 [0m2.439 ms - 69707[0m
+[0mGET /assets/css/bootstrap.css.map [32m200 [0m0.787 ms - 389287[0m
+[0mGET /web/views/pages/home.html [32m200 [0m0.626 ms - 93[0m
+[0mGET /favicon.ico [32m200 [0m3.671 ms - 4714[0m
+[0mGET /web/views/pages/users/register.html [32m200 [0m15.221 ms - 5732[0m
+[0mGET /favicon.ico [32m200 [0m1.881 ms - 4714[0m
+[0mGET /register [32m200 [0m2.409 ms - 4714[0m
+[0mGET /assets/css/bootstrap.css [32m200 [0m0.784 ms - 146010[0m
+[0mGET /assets/css/myanimations.css [32m200 [0m0.894 ms - 1502[0m
+[0mGET /assets/css/animate.css [32m200 [0m1.000 ms - 23848[0m
+[0mGET /assets/js/angular-route.js [32m200 [0m2.381 ms - 45008[0m
+[0mGET /assets/js/angular-animate.js [32m200 [0m4.653 ms - 151136[0m
+[0mGET /app.js [32m200 [0m1.399 ms - 510[0m
+[0mGET /assets/js/angular.js [32m200 [0m5.109 ms - 1268263[0m
+[0mGET /route.js [32m200 [0m0.441 ms - 3396[0m
+[0mGET /web/controllers/userControl.js [32m200 [0m1.315 ms - 4005[0m
+[0mGET /services/userServices.js [32m200 [0m2.209 ms - 716[0m
+[0mGET /web/controllers/mainController.js [32m200 [0m2.497 ms - 4384[0m
+[0mGET /services/authServices.js [32m200 [0m1.821 ms - 3297[0m
+[0mGET /assets/js/jquery-3.2.1.min.js [32m200 [0m0.999 ms - 86659[0m
+[0mGET /assets/js/bootstrap.js [32m200 [0m5.286 ms - 69707[0m
+[0mGET /assets/css/bootstrap.css.map [32m200 [0m0.473 ms - 389287[0m
+[0mGET /web/views/pages/users/register.html [32m200 [0m0.512 ms - 5732[0m
+[0mGET /favicon.ico [32m200 [0m0.895 ms - 4714[0m
+[0mGET / [32m200 [0m3.349 ms - 4714[0m
+[0mGET /robots.txt [32m200 [0m76.782 ms - 4714[0m
+[0mGET / [32m200 [0m3.666 ms - 4714[0m

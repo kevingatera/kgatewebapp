@@ -109,7 +109,8 @@ app.run(['$rootScope', 'Auth', '$location', function($rootScope, Auth, $location
             $location.path('/profile')
             }
         }
+        /* ..... ADDITIONS NEEDED TO TAKE CARE OF THE Cannot Read property of undefined */
     })
 }])
 
-// console.log('ROUTE.js file... OK'); 
+// console.log('ROUTE.js file... OK');

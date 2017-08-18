@@ -17,7 +17,10 @@
   <div ng-class="{'has-success':(regForm.name.$valid && !regForm.name.$pristine),
                     'has-error':(!regForm.name.$pristine || regForm.$submitted) && !regForm.name.$valid}">
     <label> Full Name:</label>
-    <input class="form-control" type="text" name="name" placeholder="please enter your name" ng-model="register.registrationData.name" ng-pattern="/^[a-z\u00C0-\u02AB'´`]+\.?\s([a-z\u00C0-\u02AB'´`]+\.?\s?)+$/i" ng-minLength="3" ng-maxLength="30" required/>
+    <input class="form-control" type="text" name="name" placeholder="please enter your name"
+          ng-model="register.registrationData.name"
+          ng-pattern="/^[a-z\u00C0-\u02AB'´`]+\.?\s([a-z\u00C0-\u02AB'´`]+\.?\s?)+$/i"
+          ng-minLength="3" ng-maxLength="30" required/>
     <p ng-show="(!regForm.name.$pristine || regForm.$submitted) && regForm.name.$error.required" class="help-block">
       This field is required
     </p>
@@ -30,12 +33,18 @@
   <br />
 
   <!-- Username -->
-  <div div ng-class="{'has-success':(regForm.username.$valid && !regForm.username.$pristine),
-                  'has-error':(!regForm.username.$pristine || regForm.$submitted) && !regForm.username.$valid}">
+  <div div ng-class="{'has-success':((regForm.username.$valid && !regForm.username.$pristine) && !regForm.usernameInvalid),
+                  'has-error':((!regForm.username.$pristine || regForm.$submitted) && !regForm.username.$valid) || regForm.usernameInvalid}">
     <label> Username:</label>
-    <input class="form-control" type="text" name="username" placeholder="please enter your username" ng-model="register.registrationData.username" ng-pattern="/^(?!.*?[\W])(?=.*?[a-zA-X]|=.*?[A-Z]).{3,16}$/" ng-minLength="3" ng-maxLength="30" required/>
+    <input class="form-control" type="text" name="username"
+            placeholder="please enter your username" ng-model="register.registrationData.username"
+            ng-pattern="/^(?!.*?[\W])(?=.*?[a-zA-X]|=.*?[A-Z]).{3,16}$/"
+            ng-minLength="3" ng-maxLength="30" ng-blur="register.checkUsername(registrationData)" required/>
     <p ng-show="(!regForm.username.$pristine || regForm.$submitted) && regForm.username.$error.required" class="help-block">
       This field is required
+    </p>
+    <p class="help-block">
+      {{ register.usernameMessage }}
     </p>
     <ul ng-show="(regForm.username.$error.minLength || regForm.username.$error.maxLength || regForm.username.$error.pattern) && !regForm.username.$pristine" class="help-block">
       <li>Must not contain any special character or spaces</li>
@@ -82,13 +91,12 @@
 
 </form>
 
-<br />
+<!-- <br />
 <span><strong>Is this form pristine: </strong>{{ regForm.$pristine }}</span>
 <span><strong>Does it have errors: </strong>{{ regForm.$error }}</span>
 <span><strong>Was this form submitted: </strong>{{ regForm.$submitted }}</span>
 <span><strong>Is this form valid: </strong>{{ regForm.$valid }}</span>
-
-<br />
+<br /> -->
 
 <!-- This is the loading stuff that comes when we're waiting
      that the server answers -->

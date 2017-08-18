@@ -85,7 +85,7 @@ module.exports = function(app, passport){
         userProfileURL: "https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true"﻿
       },
       function(token, tokenSecret, profile, done) {
-          console.log(profile._json.email);
+          // console.log(profile._json.email);
           /* The following is our query ie find the one user in the database
               if found then execute the (err, user) => ... */
               User.findOne({
@@ -121,7 +121,8 @@ module.exports = function(app, passport){
         clientSecret: 'sNz6cwWJHtJ208CyQrxA5XzT',
         callbackURL: "https://kevingatera.com/auth/google/callback"
     }, function(token, tokenSecret, profile, done) {
-            console.log(profile._json.emails[0].value);
+            // console.log(profile._json.emails[0].value);
+            // console.log(profile);
             User.findOne({
                 email: profile._json.emails[0].value
             }).select('username password email').exec(function(err, user){
@@ -138,14 +139,13 @@ module.exports = function(app, passport){
                     done(err);
                 }
             })
-            done(null, profile);
         }));
 
         app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'email', 'profile'] }));
 
         app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/googleerror' }), function(req, res) {
             console.log('The google token is ' + token);
-            res.redirect('/google' + token);
+            res.redirect('/google/' + token);
         });
 
         return passport;

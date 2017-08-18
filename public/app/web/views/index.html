@@ -98,9 +98,9 @@
     <div class="container theme-showcase" role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Welcome to Kevin Gatera's portfolio server</h1>
-        <p>This is work in progress. (last modified: Tue, August 1st, 2017)</p>
+      <div ng-show="mainCtrl.loginStatus" class="jumbotron">
+        <h1>Welcome to {{ mainCtrl.username }}'s portfolio server</h1>
+        <p>This is work in progress. (last modified: Tue, August 16th, 2017)</p>
       </div>
       <div ng-view></div>
 

@@ -136,7 +136,6 @@ module.exports = function(router) {
 
     /* the following will decrypt the token and send it back to the user
     and that will be possible with this middleware */
-
     router.use(function(req, res, next) {
         var token = req.body.token || req.body.query || req.headers['x-access-token'];
 
