@@ -6,7 +6,7 @@
     that when this form is submitted activate this function
 -->
 
-<form ng-submit="mainCtrl.doLogin(loginData)">
+<form name="loginForm" ng-submit="mainCtrl.doLogin(loginData)">
     <!-- Username -->
     <label> Username:</label>
     <input class="form-control" type="text" name="username"
@@ -42,9 +42,8 @@
 
 <br />
 
-<!-- We need to  -->
 
-<div class="row row-show-hide-message" ng-show="mainCtrl.successMessage">
+<div class="row row-show-hide-message" ng-show="mainCtrl.successMessage && loginForm.$submitted">
     <div class="alert alert-success">
         <!-- Success Message -->
         {{ mainCtrl.successMessage }}

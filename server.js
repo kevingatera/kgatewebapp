@@ -18,7 +18,7 @@ app.use('/api', appRoutes); // This comes last so that it cause the parsed data
 /* Also, the '/api' will help us differentiate the frontend routes from the
     backend ones by appending '// http://localhost:27017/api' right in middle. */
 
-// Create a promise variable to store the db connection
+// Create a connection to the database
 mongoose.connect('mongodb://localhost:27017/kgatewebapp_db', { useMongoClient: true }, function(err){
     if (err) {
         console.log('Not connected to MongoDB. What happenned? \n' + err );

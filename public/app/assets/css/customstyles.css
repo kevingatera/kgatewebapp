@@ -1,0 +1,195 @@
+/* Reset everything */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  margin: 0;
+  font-family: Arial , "Helvetica Neue", Helvetica, sans-serif;
+  font-size:  17px;
+  color: #darkblue;
+  line-height: 1.6;
+  background-color: #101010;
+  color: #C0C0C0;
+}
+
+strong {
+  color: #FFFFFF;
+}
+
+#section-a strong {
+  text-decoration: underline;
+}
+
+#showcase {
+  background-image: url('../images/kevinwallpaper.jpg');
+  height: 70vh;
+  /* center things */
+  background-size: cover;
+  background-position: center;
+}
+
+#section-a {
+  display: flex; /* make it a container and align horizontally as rows */
+  flex-direction: column; /* change the direction to column */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  height: 30vh;
+}
+
+#section-a h1 {
+  font-size: 2em;
+  line-height: 1.2;
+}
+
+#section-a p {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#section-a .custom-button {
+  font-size: 1.48em;
+  text-decoration: none;
+  color: #C0C0C0;
+  border: white 2px solid;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+#section-a .custom-button:hover {
+  background: white;
+  color: #101010;
+}
+
+.section-b {
+  margin-top: 20px;
+  padding: 0 10px;
+  align-items: center;
+}
+
+.section-b h2 {
+  font-size: 2em;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.centered-div{
+  max-width: 850px;
+  align-items: center;
+  margin: 0px auto;
+}
+
+main{
+    padding-top: 30px;
+}
+
+/* HEADER AREA */
+
+header .navbar {
+    border-radius: 0;
+    background-color: #101010;
+}
+
+/* NG-ANIMATE */
+/* Show & hide with style */
+.show-hide-message.ng-hide-remove {
+    -webkit-animation:zoomIn 0.3s both ease;
+    -moz-animation:zoomIn 0.3s both ease;
+    animation:zoomIn 0.3s both ease;
+}
+
+/*Spinner animations*/
+.spinner{
+    -webkit-animation:spin 1s infinite;
+    -moz-animation:spin 1s infinite;
+    animation:spin 1s infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@-moz-keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+    .bs-docs-masthead {
+        padding: 80px 0;
+    }
+}
+
+.bs-docs-masthead, .bs-docs-header {
+    position: relative;
+    padding: 30px 15px;
+    color: #cdbfe3;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #6f5499;
+    /*background-image: -webkit-gradient(linear,left top,left bottom,from(#563d7c),to(#6f5499));*/
+    background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
+    background-image: -o-linear-gradient(top,#563d7c 0,#6f5499 100%);
+    background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+    background-repeat: repeat-x;
+}
+
+/* Code for typing cursor */
+.cursor:after {
+    content:"_";
+    opacity: 0;
+    animation: cursor 1s infinite;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+/*
+#patterned {
+background-image: url('../images/kevinwallpaper.jpg');
+height: 100vh;
+background-size: cover;
+background-position: center;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 0 20px;
+}
+
+#showcase {
+background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAGklEQVQYV2NkwAIY8Qn+Z2BggCvAqxLZlP8AOZ8CBbnqjfcAAAAASUVORK5CYII=) repeat;
+height: 100vh;
+margin: 0 -20px;
+} */

@@ -13,7 +13,7 @@
 
     <!-- These are CSS files -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/myanimations.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/customstyles.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
 
     <!-- These are Angular files -->
@@ -52,12 +52,12 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li>
-                <a href="/about">About</a>
+            <!-- <li id="home" class="active"><a href="/">Welcome</a></li> -->
+            <li id="about">
+                <a href="/about">About me</a>
             </li>
-            <li>
-                <a href="/contact">Contact</a>
+            <li id="contact">
+                <a href="/contact">Contact me</a>
             </li>
 
             <li class="dropdown" ng-show="mainCtrl.loginStatus">
@@ -89,11 +89,46 @@
       </div>
     </nav>
 
-    <div class="bs-docs-masthead" id="content" role="main">
+
+    <header id="showcase">
+      <!-- <img id="scroll down" src="assets/images/scroll2.gif" style="width:5em"> -->
+    </header>
+
+    <section id="section-a">
+      <div class="centered-div">
+          <!-- <h1 id="typing1">Hello, my name is <strong>Kevin Gatera</strong></h1> -->
+          <p id="typing2"></p>
+          <a href="/resume" class="custom-button">View Resume</a>
+      </div>
+    </section>
+
+    <section class="section-b">
+        <div class="centered-div">
+          <h2>About me</h2>
+          <p class="usual-paragraph">
+            Though I am a front-end developer by day, I have put pen to paper during the design process, been completely lost in a full stack environment and have even worn the entrepreneurship hat.
+
+            I am an alumnus of SFU's School of Interactive Arts + Technology program, graduating with a Bachelors of Science with a major in Media Arts. Originally from Vancouver, Canada but now residing in Sydney, Australia, I'm looking to grow personally and professionally anywhere in the world.
+
+            I want to be involved in projects that I can be proud of, join an amazing team and advance my development career. Take some time to look at my work, credentials and if you're interested in helping me make this happen, let's get in touch.
+          </p>
+        </div>
+    </section>
+
+    <section class="section-b">
+      <div class="centered-div">
+        <h2>Technologies I've used</h2>
+        <p>
+        </p>
+      </div>
+    </section>
+
+
+    <!-- <div class="bs-docs-masthead" id="content" role="main">
            <div class="container">
                <h1><br>MAINTENANCE MODE</h1>
            </div>
-    </div>
+    </div> -->
 
     <div class="container theme-showcase" role="main">
 
@@ -114,6 +149,8 @@
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+    <script src="assets/js/custom.js"></script>
 
   </body>
 </html>
