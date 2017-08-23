@@ -65,6 +65,7 @@ angular.module('userControllers', ['userServices']).controller('registrationCont
       app.emailMessage = false; // clear the previous value
       app.emailInvalid = false; // clear the previous value
         oneUser.checkEmail(app.registrationData).then(function(data) {
+          console.log(data);
           if(data.data.success){
             app.emailInvalid = false; // assign it a new value
             app.emailMessage = data.data.message;
